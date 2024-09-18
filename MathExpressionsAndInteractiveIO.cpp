@@ -18,18 +18,9 @@ int main()
     cin >> interestRate;
     cout << "Please enter the number of times the interest is compounded:";
     cin >> timesCompounded;
-
+    interestRate /= 100;
     amountSavings = principal * pow((1 + interestRate / timesCompounded), timesCompounded);
     interestAmount = amountSavings - principal;
-
-    //interest rate turn into %
-
-    /*
-    cout << left << setw(20) << "Interest Rate: " << fixed << setprecision(2) << right << setw(10) << interestRate << "%" << endl;
-    cout << left << setw(20) << "Times Compounded: " << fixed << setprecision(0) << right << setw(10) << timesCompounded << endl;
-    cout << left << setw(20) << "Principal: " << right << setw(10) << "$" << fixed << setprecision(2)  << principal << endl;
-    cout << left << setw(20) << "Interest: " << right << setw(10) << "$" << amountSavings << endl;
-    */
 
     // Display the formatted output
     
@@ -37,16 +28,16 @@ int main()
         << right << setw(10) << fixed << setprecision(2) << interestRate << "%" << endl;
 
     cout << left << setw(25) << "Times Compounded:"
-        << right << setw(10) << fixed << setprecision(0) << timesCompounded << endl;
+        << right << setw(11) << fixed << setprecision(0) << timesCompounded << endl;
 
     cout << left << setw(25) << "Principal:"
         << right << "$" << setw(10) << fixed << setprecision(2) << principal << endl;
 
     cout << left << setw(25) << "Interest:"
-        << right << "$" << setw(10) << fixed << setprecision(2) << interestAmount << endl;
+        << right << "$" << setw(10) << interestAmount << endl; 
 
     cout << left << setw(25) << "Amount in Savings:"
-        << right << "$" << setw(10) << fixed << setprecision(2) << amountSavings << endl;
+        << right << "$" << setw(10) << amountSavings << endl;   
 
 
 }
