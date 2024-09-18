@@ -1,5 +1,11 @@
-// MathExpressionsAndInteractiveIO.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Programmer: Aslihan Celik
 //
+//
+// MathExpressionsAndInteractiveIO.cpp : 
+// This program calculates the interest earned on a principal investment after one year.
+// It asks for the principal, interest rate, and number of times the interest is compounded.
+// The program then displays a formatted report of the interest rate, times compounded,
+// principal, interest earned, and total amount in savings.
 
 
 #include <iostream>
@@ -10,16 +16,26 @@ using namespace std;
 
 int main()
 {
-
+    // Declare variables to hold user inputs and calculated values
     double principal, interestRate, timesCompounded, amountSavings, interestAmount;
+
+    // Get user input for the principal amount
     cout << "Please enter the principal amount:";
     cin >> principal;
+    // Get user input for the interest rate as a percentage (e.g., enter 5 for 5%)
     cout << "Please enter what percent the interest rate is:";
     cin >> interestRate;
+    // Get user input for the number of times the interest is compounded annually
     cout << "Please enter the number of times the interest is compounded:";
     cin >> timesCompounded;
+
+    // Convert the interest rate from percentage to a decimal value (e.g., 5% becomes 0.05)
     interestRate /= 100;
+
+    // Calculate the total amount of savings using the compound interest formula
     amountSavings = principal * pow((1 + interestRate / timesCompounded), timesCompounded);
+
+    // Calculate the amount of interest earned
     interestAmount = amountSavings - principal;
 
     // Display the formatted output
@@ -40,5 +56,6 @@ int main()
         << right << "$" << setw(10) << amountSavings << endl;   
 
 
+    return 0;
 }
 
