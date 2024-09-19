@@ -55,8 +55,7 @@ int main()
 
     cout << left << setw(25) << "Amount in Savings: "
         << right << "$" << setw(10) << amountSavings << endl;   
-
-
+    
     return 0;
 }
 
